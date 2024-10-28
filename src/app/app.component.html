@@ -14,9 +14,15 @@
       <tr *ngFor="let estudiantes of listStudents; let i = index">
         <td>{{i+1}}</td>
         <td>{{estudiantes.nombre}}</td>
-        <td [ngStyle]="{'color': estudiantes.estado === 'retirado' ? 'red' : estudiantes.estado === 'regular' ? 'orange' : estudiantes.estado === 'promocionado' ? 'green' :'black',
+        <!-- <td [ngStyle]="{'color': estudiantes.estado === 'retirado' ? 'red' : estudiantes.estado === 'regular' ? 'orange' : estudiantes.estado === 'promocionado' ? 'green' :'black',
             'font-style': estudiantes.estado === 'retirado' ? 'italic' : 'normal' } ">
-          {{estudiantes.estado}}
+          {{estudiantes.estado}} aqui es para probar la directiva ng-style
+        </td> -->
+        <td>
+          <span
+            [ngClass]="estudiantes.estado === 'promocionado' ? 'badge text-bg-primary' : estudiantes.estado === 'regular' ? 'badge text-bg-success' : estudiantes.estado === 'retirado' ? 'badge text-bg-danger' : 'badge text-bg-info' ">
+            {{estudiantes.estado}}
+          </span>
         </td>
       </tr>
     </tbody>
