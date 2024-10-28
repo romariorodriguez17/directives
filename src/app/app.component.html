@@ -14,7 +14,10 @@
       <tr *ngFor="let estudiantes of listStudents; let i = index">
         <td>{{i+1}}</td>
         <td>{{estudiantes.nombre}}</td>
-        <td>{{estudiantes.estado}}</td>
+        <td [ngStyle]="{'color': estudiantes.estado === 'retirado' ? 'red' : estudiantes.estado === 'regular' ? 'orange' : estudiantes.estado === 'promocionado' ? 'green' :'black',
+            'font-style': estudiantes.estado === 'retirado' ? 'italic' : 'normal' } ">
+          {{estudiantes.estado}}
+        </td>
       </tr>
     </tbody>
   </table>

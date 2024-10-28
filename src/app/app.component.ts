@@ -20,7 +20,8 @@ export class AppComponent {
     { nombre: 'ronaldo nazario', estado: 'retirado' },
     { nombre: 'Ana Gomez', estado: 'promocionado' },
     { nombre: 'Carlos Sanchez', estado: 'regular' },
-    { nombre: 'Maria Lopez', estado: 'retirado' }
+    { nombre: 'Maria Lopez', estado: 'retirado' },
+    { nombre: 'fernando pulido', estado: 'expulsado' }
   ]
 
   //NgIf
