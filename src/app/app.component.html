@@ -3,8 +3,8 @@
     <h3> Listado de estudiantes (ngFor)</h3>
   </div>
   <br>
-
-  <table class="table" title="tabla">
+  <!-- Añadimos la directiva ngIf para validar que cuando no haya ningun elemento en la lista no se muestre nada de la tabla -->
+  <table class="table" title="tabla" *ngIf="listStudents.length > 0 ">
     <thead>
       <th>N#</th>
       <th>Nombre</th>
@@ -17,6 +17,13 @@
         <td>{{estudiantes.estado}}</td>
       </tr>
     </tbody>
-
   </table>
+  <!-- Aqui al momento de cumplirse la condicion de arriba automaticamente se mopstrara este mensaje -->
+  <h3 *ngIf="listStudents.length === 0"> No hay registros para mostrar</h3>
+</div>
+
+
+<!-- NgIf -->
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button" (click)="toogle()">delete</button>
 </div>
